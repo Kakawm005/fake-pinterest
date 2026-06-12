@@ -2,12 +2,13 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>FakePinterest</title> 
+    <title>Perfil - FakePinterest</title> 
 </head>
 <body>
     <header>
-        <h1>Welcome to the Homepage</h1>
+        <h1>Perfil do usuario : {{ usuario }}</h1>
         <p>Agora vamos continuar nosso site</p>
+        <a href="{{ url_for('homepage') }}">Homepage</a>
     </header>
 </body>
 </html>
