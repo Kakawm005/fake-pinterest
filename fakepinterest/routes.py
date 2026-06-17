@@ -21,9 +21,12 @@ def login():
 def cadastro():
     formcadastro = FormCadastro()
     if formcadastro.validate_on_submit():
+        senha = bcrypt.generate_password_hash(formcadastro.senha.data)
         usuario = Usuario(username=formcadastro.username.data, 
                           email=formcadastro.email.data,
-                          senha=formcadastro.senha.data)
+                          senha=senha)
+        database.session(usuario)
+        database.session.commit()
     return render_template("cadastro.html", form=formcadastro)
 
 
